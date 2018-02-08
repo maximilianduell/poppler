@@ -304,6 +304,12 @@ GType          poppler_action_get_type (void) G_GNUC_CONST;
 void           poppler_action_free     (PopplerAction *action);
 PopplerAction *poppler_action_copy     (PopplerAction *action);
 
+void poppler_action_hello  (PopplerAction *action);
+GString *poppler_action_hello_gstr  (PopplerAction *action);
+const gchar *poppler_action_hello_str  (PopplerAction *action);
+
+const gchar *poppler_action_get_uri(PopplerAction *action);
+const gchar *poppler_action_get_named_dest(PopplerAction *action);
 
 #define POPPLER_TYPE_DEST              (poppler_dest_get_type ())
 GType          poppler_dest_get_type   (void) G_GNUC_CONST;

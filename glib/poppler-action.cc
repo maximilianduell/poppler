@@ -229,6 +229,33 @@ poppler_action_copy (PopplerAction *action)
 	return new_action;
 }
 
+void poppler_action_hello(PopplerAction *action) 
+{
+  //return "hello, world";
+  printf("hello, world!\n");
+}
+
+GString *poppler_action_hello_gstr(PopplerAction *action) 
+{
+  return g_string_new("hello, world");
+}
+
+const gchar *poppler_action_hello_str(PopplerAction *action) 
+{
+  return "hello, world";
+}
+
+
+const gchar *poppler_action_get_uri(PopplerAction *action) 
+{
+  return action->uri.uri;
+}
+
+const gchar *poppler_action_get_named_dest(PopplerAction *action) 
+{
+  return action->goto_dest.dest->named_dest;
+}
+
 static
 PopplerDest *
 dest_new_goto (PopplerDocument *document,
